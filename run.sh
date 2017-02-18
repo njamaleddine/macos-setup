@@ -3,9 +3,6 @@
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Update and Upgrade homebrew
-brew update && brew upgrade
-
 brew_packages=(
   awscli
   bash
@@ -107,6 +104,8 @@ while true; do
 done
 
 # Brew and Brew cask installation
+echo "Updating homebrew..."
+brew update && brew upgrade
 echo "Installing homebrew packages..."
 brew install ${brew_packages[*]}
 echo "Installing homebrew cask apps..."
