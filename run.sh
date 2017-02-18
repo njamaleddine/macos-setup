@@ -91,7 +91,7 @@ while true; do
     esac
 done
 
-read -p "Specify any additional brew cask apps (separate each with a space): " additional_cask_packages
+read -p "Specify any additional brew cask apps (separate each with a space or press ENTER to continue): " additional_cask_packages
 brew_cask_packages=("${brew_cask_packages[@]}" "${additional_cask_packages[@]}")
 
 while true; do
