@@ -57,7 +57,6 @@ brew_cask_packages=(
   gimp
   google-chrome
   java
-  minecraft
   ngrok
   postman
   sketch
