@@ -74,8 +74,10 @@ brew_cask_packages=(
   vlc
 )
 
+USE_BASH_PROFILE=false
+
 while true; do
-    read -p "Install work brew packages?" yn
+    read -p "Install work brew packages? (y/n): " yn
     case $yn in
         [Yy]* ) brew_packages=("${brew_packages[@]}" "${work_brew_packages[@]}"); break;;
         [Nn]* ) break;;
@@ -84,7 +86,7 @@ while true; do
 done
 
 while true; do
-    read -p "Install kivy brew packages?" yn
+    read -p "Install kivy brew packages? (y/n): " yn
     case $yn in
         [Yy]* ) brew_packages=("${brew_packages[@]}" "${kivy_brew_packages[@]}"); break;;
         [Nn]* ) break;;
@@ -95,6 +97,14 @@ done
 read -p "Specify any additional brew cask apps (separate each with a space): " additional_cask_packages
 brew_cask_packages=("${brew_cask_packages[@]}" "${additional_cask_packages[@]}")
 
+while true; do
+    read -p "Replace ~/.bash_profile with new one? (y/n): " yn
+    case $yn in
+        [Yy]* ) USE_BASH_PROFILE=true; break;;
+        [Nn]* ) break;;
+        * ) echo "You must enter yes or no";;
+    esac
+done
 
 # Brew and Brew cask installation
 echo "Installing homebrew packages..."
@@ -114,3 +124,11 @@ pip install ipython httpie virtualenvwrapper
 echo "Starting services..."
 brew services start postgresql
 brew services start redis
+
+# Copying custom .bash_profile to ~/.bash_profile
+if [ $USE_BASH_PROFILE ]; then
+  echo "Setting bash profile..."
+  cp .bash_profile ~/.bash_profile
+fi
+
+echo "MacOS setup complete!"
