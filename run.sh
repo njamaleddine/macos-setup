@@ -51,6 +51,7 @@ brew_cask_packages=(
   android-studio
   arduino
   atom
+  code
   docker-toolbox
   eclipse-ide
   firefox
