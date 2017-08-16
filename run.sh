@@ -28,6 +28,7 @@ brew_packages=(
   rabbitmq
   redis
   sassc
+  tree
   sqlite
   wget
 )
@@ -113,6 +114,9 @@ brew cask install ${brew_cask_packages[@]}
 
 echo "Cleaning up after installation..."
 brew cleanup
+
+# Setup text editors
+vscode_setup.sh
 
 # Python Packages
 echo "Installing python packages..."
