@@ -19,6 +19,7 @@ brew_packages=(
   jq
   memcached
   mongodb
+  moreutils
   node
   openssl
   postgresql
