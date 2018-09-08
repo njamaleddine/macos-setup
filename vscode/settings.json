@@ -1,0 +1,31 @@
+{
+    "editor.fontSize": 14,
+    "editor.rulers": [80],
+    "window.zoomLevel": 0,
+    "files.exclude": {
+        "dist/": true,
+        "build/lib/*/*.py": true,
+        "*.egg-info/**": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/__pycache__/**": true,
+        ".vscode": true
+    },
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "window.openFoldersInNewWindow": "on",
+    "workbench.colorTheme": "Material Theme Darker",
+    "editor.snippetSuggestions": "top",
+    "python.linting.pep8Path": "pep8",
+    "npm-intellisense.showBuildInLibs": true,
+    "vsicons.dontShowNewVersionMessage": true
+}

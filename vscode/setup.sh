@@ -1,3 +1,4 @@
+#!/bin/bash
 code --install-extension ms-vscode.azure-account
 code --install-extension alefragnani.bookmarks
 code --install-extension ms-vscode.cpptools

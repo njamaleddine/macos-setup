@@ -1,5 +1,4 @@
 #!/bin/bash
-
 brew_packages=(
   awscli
   bash
@@ -58,6 +57,7 @@ brew_cask_apps=(
 )
 
 USE_BASH_PROFILE=false
+USE_VSCODE_SETTINGS=false
 
 read -p "Specify any additional brew packages (separate each with a space or press ENTER to continue): " additional_packages
 brew_packages=("${brew_packages[@]}" "${additional_packages[@]}")
@@ -83,6 +83,15 @@ while true; do
     esac
 done
 
+while true; do
+    read -p "Replace visual studio code settings.json file with new one? (y/n): " yn
+    case $yn in
+        [Yy]* ) USE_VSCODE_SETTINGS=true; break;;
+        [Nn]* ) break;;
+        * ) echo "You must enter yes or no";;
+    esac
+done
+
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -97,23 +106,24 @@ brew cask install ${brew_cask_packages[@]}
 echo "Cleaning up after installation..."
 brew cleanup
 
-# Setup text editors
-vscode_setup.sh
-
-# Python Packages
-echo "Installing python packages..."
-pip install --upgrade pip
-pip install ipython httpie virtualenvwrapper pipenv
-
-# Start services
-echo "Starting services..."
-brew services start postgresql
-brew services start redis
-
-# Copying custom .bash_profile to ~/.bash_profile
 if [ $USE_BASH_PROFILE ]; then
   echo "Setting bash profile..."
   cp .bash_profile ~/.bash_profile
 fi
+
+echo "Setting up Visual Studio Code..."
+bash ./vscode/setup.sh
+if [ $USE_VSCODE_SETTINGS ]; then
+  echo "Overwriting visual-studio-code settings..."
+  cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/_settings-test.json
+fi
+
+echo "Installing python packages..."
+pip install --upgrade pip
+pip install ipython httpie pipenv virtualenvwrapper 
+
+echo "Starting services..."
+brew services start postgresql
+brew services start redis
 
 echo "MacOS setup complete!"
