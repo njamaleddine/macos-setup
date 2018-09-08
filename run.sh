@@ -62,15 +62,6 @@ USE_VSCODE_SETTINGS=false
 read -p "Specify any additional brew packages (separate each with a space or press ENTER to continue): " additional_packages
 brew_packages=("${brew_packages[@]}" "${additional_packages[@]}")
 
-while true; do
-    read -p "Replace ~/.bash_profile with new one? (y/n): " yn
-    case $yn in
-        [Yy]* ) USE_BASH_PROFILE=true; break;;
-        [Nn]* ) break;;
-        * ) echo "You must enter yes or no";;
-    esac
-done
-
 read -p "Specify any additional brew cask apps (separate each with a space or press ENTER to continue): " additional_cask_apps
 brew_cask_apps=("${brew_cask_apps[@]}" "${additional_cask_apps[@]}")
 
