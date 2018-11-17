@@ -1,8 +1,10 @@
 #!/bin/bash
 brew_packages=(
   awscli
+  awsebcli
   bash
   bash-completion
+  bat
   caskroom/cask/brew-cask
   ffmpeg --with-faac --with-fdk-aac --with-libvorbis --with-ffplay --with-theora
   fluid-synth --with-libsndfile
