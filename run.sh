@@ -22,10 +22,10 @@ brew_packages=(
   openssl
   postgresql
   postgis
-  python
   python3
   rabbitmq
   redis
+  stern
   tree
   sqlite
   wget
@@ -48,6 +48,7 @@ brew_cask_apps=(
   robo-3t
   sketch
   sketchup
+  skitch
   skype
   slack
   spotify
@@ -88,7 +89,6 @@ done
 # Install Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Brew and Brew cask installation
 echo "Updating homebrew..."
 brew update && brew upgrade
 echo "Installing homebrew packages..."
@@ -98,6 +98,9 @@ brew cask install ${brew_cask_packages[@]}
 
 echo "Cleaning up after installation..."
 brew cleanup
+
+echo "Installing nvm"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 if [ $USE_BASH_PROFILE ]; then
   echo "Setting bash profile..."

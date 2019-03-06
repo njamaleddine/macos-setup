@@ -21,3 +21,7 @@ export PATH="/Users/nabil/Library/Android/sdk/platform-tools":$PATH
 # postgresql
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
