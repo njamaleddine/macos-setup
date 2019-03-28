@@ -10,6 +10,7 @@ brew_packages=(
   fluid-synth --with-libsndfile
   geos
   git
+  goreplay
   graphviz
   heroku
   imagemagick
@@ -18,6 +19,7 @@ brew_packages=(
   memcached
   mongodb
   moreutils
+  ngrep
   node
   openssl
   postgresql
