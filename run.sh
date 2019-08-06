@@ -99,7 +99,7 @@ brew update && brew upgrade
 echo "Installing homebrew packages..."
 brew install ${brew_packages[*]}
 echo "Installing homebrew cask apps..."
-brew cask install ${brew_cask_packages[@]}
+brew cask install ${brew_cask_apps[@]}
 
 echo "Cleaning up after installation..."
 brew cleanup
