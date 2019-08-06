@@ -16,6 +16,7 @@ brew_packages=(
   imagemagick
   jpeginfo
   jq
+  kubectl
   memcached
   mongodb
   moreutils
@@ -31,6 +32,7 @@ brew_packages=(
   tree
   sqlite
   wget
+  zsh
 )
 
 # Brew Cask Applications
@@ -44,6 +46,7 @@ brew_cask_apps=(
   firefox
   gimp
   google-chrome
+  iterm2
   java
   ngrok
   postman
