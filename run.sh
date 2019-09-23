@@ -8,6 +8,7 @@ brew_packages=(
   caskroom/cask/brew-cask
   ffmpeg --with-faac --with-fdk-aac --with-libvorbis --with-ffplay --with-theora
   fluid-synth --with-libsndfile
+  fzf
   geos
   git
   goreplay
