@@ -39,7 +39,6 @@ brew_packages=(
 # Brew Cask Applications
 brew_cask_apps=(
   android-file-transfer
-  android-studio
   arduino
   docker-toolbox
   eclipse-ide
