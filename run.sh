@@ -67,7 +67,7 @@ optional_cask_apps=(
   vlc
 )
 
-REPLACE_ZSHRC_FILE=false
+REPLACE_BASH_PROFILE=false
 USE_VSCODE_SETTINGS=false
 
 read -p "Specify any additional brew packages (separate each with a space or press ENTER to continue): " additional_packages
@@ -92,7 +92,7 @@ while true; do
   read -p "Replace ~/.zshrc with new one? (y/n): " yn
   case $yn in
   [Yy]*)
-    REPLACE_ZSHRC_FILE=true
+    REPLACE_BASH_PROFILE=true
     break
     ;;
   [Nn]*) break ;;
@@ -113,7 +113,7 @@ while true; do
 done
 
 # Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "Updating homebrew..."
 brew update && brew upgrade
@@ -128,7 +128,7 @@ brew cleanup
 echo "Installing nvm"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-if [ $REPLACE_ZSHRC_FILE ]; then
+if [ $REPLACE_BASH_PROFILE ]; then
   echo "Setting bash profile..."
   cp .bash_profile ~/.bash_profile
 fi
