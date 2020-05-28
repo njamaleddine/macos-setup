@@ -16,16 +16,24 @@
     },
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
-    "python.linting.pep8Enabled": false,
+    "python.linting.pycodestyleEnabled": false,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "workbench.iconTheme": "eq-material-theme-icons-darker",
     "workbench.editor.enablePreview": true,
     "workbench.editor.enablePreviewFromQuickOpen": true,
     "window.openFoldersInNewWindow": "on",
-    "workbench.colorTheme": "Material Theme Darker",
+    "workbench.colorTheme": "Material Theme Palenight",
     "editor.snippetSuggestions": "top",
-    "python.linting.pep8Path": "pep8",
+    "python.linting.pycodestylePath": "pep8",
     "npm-intellisense.showBuildInLibs": true,
-    "vsicons.dontShowNewVersionMessage": true
+    "workbench.editor.showIcons": false,
+    "workbench.iconTheme": "file-icons",
+    "editor.suggestSelection": "first",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "breadcrumbs.enabled": false
 }
