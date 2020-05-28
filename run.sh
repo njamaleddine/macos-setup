@@ -56,8 +56,8 @@ optional_cask_apps=(
   android-file-transfer
   android-studio
   arduino
+  balenaetcher
   discord
-  etcher
   ngrok
   java
   sketch
@@ -89,7 +89,7 @@ while true; do
 done
 
 while true; do
-  read -p "Replace ~/.zshrc with new one? (y/n): " yn
+  read -p "Replace ~/.bash_profile with new one? (y/n): " yn
   case $yn in
   [Yy]*)
     REPLACE_BASH_PROFILE=true
@@ -145,6 +145,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 echo "Brew cask services available to start:"
 brew services list
-echo "If you'd like to start services you can do so using the command: `brew services start ...`"
+echo "If you'd like to start services you can do so using the command: brew services start"
 
 echo "macOS setup complete!"
