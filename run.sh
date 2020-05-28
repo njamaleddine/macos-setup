@@ -18,14 +18,13 @@ brew_packages=(
   jq
   kubectl
   memcached
-  mongodb
+  mongodb-community@4.2
   moreutils
   ngrep
   node
-  openssl
   postgresql
   postgis
-  python3
+  python
   rabbitmq
   redis
   stern
@@ -119,6 +118,7 @@ echo "Updating homebrew..."
 brew update && brew upgrade
 echo "Brew taps..."
 brew tap heroku/brew
+brew tap mongodb/brew
 echo "Installing homebrew packages..."
 brew install ${brew_packages[*]}
 echo "Installing homebrew cask apps..."
