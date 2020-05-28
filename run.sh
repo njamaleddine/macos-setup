@@ -10,7 +10,7 @@ brew_packages=(
   fzf
   geos
   git
-  goreplay
+  gor
   graphviz
   heroku
   imagemagick
@@ -115,9 +115,6 @@ done
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-echo "Installing ohmyzsh"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo "Updating homebrew..."
 brew update && brew upgrade
 echo "Installing homebrew packages..."
@@ -142,6 +139,9 @@ if [ $USE_VSCODE_SETTINGS ]; then
   echo "Overwriting visual-studio-code settings..."
   cp ./vscode/settings.json ~/Library/Application\ Support/Code/User/_settings-test.json
 fi
+
+echo "Installing ohmyzsh"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Brew cask services available to start:"
 brew services list
