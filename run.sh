@@ -117,6 +117,8 @@ done
 
 echo "Updating homebrew..."
 brew update && brew upgrade
+echo "Brew taps..."
+brew tap heroku/brew
 echo "Installing homebrew packages..."
 brew install ${brew_packages[*]}
 echo "Installing homebrew cask apps..."
