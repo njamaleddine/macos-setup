@@ -18,7 +18,7 @@ brew_packages=(
   jq
   kubectl
   memcached
-  mongodb-community@4.2
+  mongodb-community
   moreutils
   ngrep
   node
